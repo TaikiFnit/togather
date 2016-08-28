@@ -11,6 +11,11 @@ module.exports = {
   },
   view: (req, res) => {
     return res.view('world/view.ejs')
+  },
+  command: (req, res) => {
+    console.log('id:' + req.param('id'))
+    console.log('command1:' + req.param('command1'))
+    console.log('command2:' + req.param('command2'))
   }
 };
 
