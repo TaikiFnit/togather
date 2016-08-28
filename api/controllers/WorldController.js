@@ -6,14 +6,11 @@
  */
 
 module.exports = {
-	hi: (req, res) => {
-    return res.send('hi there!')
-  },
-  bye: (req, res) => {
-    return res.redirect("http://google.com")
-  },
   new: (req, res) => {
     return res.view("world/new.ejs")
+  },
+  view: (req, res) => {
+    return res.view('world/view.ejs')
   }
 };
 
