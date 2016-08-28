@@ -1,0 +1,60 @@
+<%
+
+var code = '';
+var ypos = '', yneg = '';
+var queue = [];
+
+console.log(world)
+
+for (y in world.map) {
+  var xpos = '', xneg = '';
+  for (x in world.map[y]) {
+    if(x >= 0) {
+      xpos += '<div class="cell y' + y + ' x' + x + '">' + world.map[y][x] + '</div>';
+    }
+    else {
+      xneg += '<div class="cell y' + y + ' x' + x + '">' + world.map[y][x] + '</div>';
+    }
+  }
+
+  if(y >= 0) {
+    ypos += '<div class="line' + y + '">';
+    ypos += (xneg + xpos);
+    ypos += '</div>';
+  }
+  else {
+    yneg += '<div class="line' + y + '">';
+    yneg += (xneg + xpos);
+    yneg += '</div>';
+  }
+}
+
+code = yneg + ypos
+
+console.log(code);
+
+%>
+
+<h2>show.ejs</h2>
+world.name : <%= world.name %>
+
+<div class="map">
+  <%- code %>
+
+</div>
+
+<style>
+  .line {
+    width: 100%;
+    height: 22px;
+  }
+
+  .cell {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+</style>
+

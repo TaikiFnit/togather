@@ -1,0 +1,6 @@
+<h2>World List</h2>
+<ul>
+<% for(var i = 0; i < allWorld.length; i++) { %>
+  <li><a href="/worldView/<%= allWorld[i].id %>"><%= allWorld[i].name %></a></li>
+<% } %>
+</ul>

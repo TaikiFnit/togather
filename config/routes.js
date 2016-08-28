@@ -34,7 +34,9 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+  '/worldView/:id': 'worldViewController.show'
 
   /***************************************************************************
   *                                                                          *
