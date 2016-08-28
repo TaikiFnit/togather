@@ -1,0 +1,32 @@
+new.ejs
+<form action="/" method="POST">
+  <input type="text">
+</form>
+
+<script>
+
+$(function() {
+
+  var json = {
+    name: "ajax",
+    age: 100,
+    map: {
+      "1": "FNI",
+      "-1": "tai"
+    }
+  }
+
+  var settings = {
+    "crossDomain": true,
+    "url": "http://localhost:1337/world/",
+    "method": "POST",
+    "dataType": "json",
+    "data": json
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+})
+
+</script>

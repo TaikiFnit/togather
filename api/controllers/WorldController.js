@@ -11,6 +11,9 @@ module.exports = {
   },
   bye: (req, res) => {
     return res.redirect("http://google.com")
+  },
+  new: (req, res) => {
+    return res.view("world/new.ejs")
   }
 };
 
