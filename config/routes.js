@@ -36,9 +36,18 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  '/worldView/:id': 'worldViewController.show',
-  '/world/:id/:command1/:command2': 'worldController.command'
+  // world Controller
+  '/world/:id/register': 'worldController.register',
+  '/world/:id/join': 'worldController.join',
 
+  // worldView Controller
+  '/worldView/:id': 'worldViewController.show',
+
+  // Command Routing
+  '/world/:id/command/:direction': 'worldCommandController.command',
+  '/world/:id/go/:direction': 'worldCommandController.go',
+  '/world/:id/break/:direction': 'worldCommandController.break',
+  '/world/:id/search/:direction': 'worldCommandController.serach',
 
   /***************************************************************************
   *                                                                          *

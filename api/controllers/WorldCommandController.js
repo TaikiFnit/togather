@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-	
+	command: (req, res) => {
+    console.log('command command : ' + req.param('direction'))
+  }
 };
 
