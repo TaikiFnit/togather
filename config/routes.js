@@ -44,10 +44,9 @@ module.exports.routes = {
   '/worldView/:id': 'worldViewController.show',
 
   // Command Routing
-  '/world/:id/command/:direction': 'worldCommandController.command',
   '/world/:id/go/:direction': 'worldCommandController.go',
   '/world/:id/break/:direction': 'worldCommandController.break',
-  '/world/:id/search/:direction': 'worldCommandController.serach',
+  '/world/:id/search/:direction': 'worldCommandController.search',
 
   /***************************************************************************
   *                                                                          *

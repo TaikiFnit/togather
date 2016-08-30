@@ -16,14 +16,21 @@ module.exports = {
       return res.send(err)
     })
   },
+
   show: (req, res) => {
     console.log(req.param('id'))
 
     sails.models.world.findOne(req.param('id')).then((world) => {
-      return res.view('worldView/show.ejs', {world: world})
+
+      sails.models.player.find({worldId: req.param('id')}).then((players) => {
+        return res.view('worldView/show.ejs', { world: world, players: players });
+      }).catch((err) => {
+        return res.send(err);
+      });
     }).catch((err) => {
-      return res.send(err)
-    })
+      return res.send(err);
+    });
+
   }
 };
 

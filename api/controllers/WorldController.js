@@ -6,16 +6,30 @@
  */
 
 module.exports = {
+
   new: (req, res) => {
     return res.view("world/new.ejs")
   },
-  view: (req, res) => {
-    return res.view('world/view.ejs')
+
+  register: (req, res) => {
+    let data = {
+      playerId: req.param('playerId'),
+      worldId: req.param('id'),
+      position: {
+        x: 0,
+        y: 0
+      },
+      score: 0
+    };
+
+    sails.models.player.create(data).then((player) => {
+      return res.json({status: true});
+    }).catch((err) => {
+      return res.json({status: false});
+    });
   },
-  command: (req, res) => {
-    console.log('id:' + req.param('id'))
-    console.log('command1:' + req.param('command1'))
-    console.log('command2:' + req.param('command2'))
-  }
+  join: (req, res) => {
+
+  },
 };
 

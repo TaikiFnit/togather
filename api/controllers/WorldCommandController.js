@@ -6,8 +6,15 @@
  */
 
 module.exports = {
-	command: (req, res) => {
+  // command method
+	go: (req, res) => {
     console.log('command command : ' + req.param('direction'))
-  }
+  },
+  break: (req, res) => {
+
+  },
+  search: (req, res) => {
+
+  },
 };
 
